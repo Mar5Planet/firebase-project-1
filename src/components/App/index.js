@@ -12,7 +12,7 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
- 
+
 import * as ROUTES from '../../constants/routes';
 
 
@@ -21,8 +21,6 @@ const App = () => (
     <div>
       <Navigation />
  
- 
-
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
       <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
       <Route path={ROUTES.SIGN_IN} component={SignInPage} />
