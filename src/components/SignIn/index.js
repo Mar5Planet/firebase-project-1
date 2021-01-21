@@ -1,16 +1,30 @@
-import React from 'react';
-
+import React, {useState} from 'react';
+import * as ROUTES from '../../constants/routes';
+import { Link } from 'react-router-dom' 
 import { Form, Input, Button, Checkbox } from 'antd';
+
 
 const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
-  };
-  const tailLayout = {
+};
+const tailLayout = {
     wrapperCol: { offset: 8, span: 16 },
-  };
+};
+
+const onSubmit = event => {
+
+}
+
+const onChange = event => {
+
+};
+
   const Signin = () => {
-    const onFinish = (values) => {
+      const [email, setEmail] = useState('');
+      const [password, setPassword] = useState('');
+  
+      const onFinish = (values) => {
         console.log('Success:', values);
       };
     
@@ -22,6 +36,7 @@ const layout = {
           <div style={{margin: '20%'}}>
 
             <Form
+            onSubmit={onSubmit}
             {...layout}
             name="basic"
             initialValues={{ remember: true }}
@@ -49,6 +64,9 @@ const layout = {
             </Form.Item>
         
             <Form.Item {...tailLayout}>
+            <p>
+                Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+            </p>
                 <Button type="primary" htmlType="submit">
                 Submit
                 </Button>
