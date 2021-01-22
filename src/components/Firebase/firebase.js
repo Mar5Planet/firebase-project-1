@@ -31,4 +31,4 @@ const config = {
     this.auth.currentUser.updatePassword(password);
 }
    
-  export default Firebase;
+export default Firebase;
