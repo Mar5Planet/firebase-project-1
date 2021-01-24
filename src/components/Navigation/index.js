@@ -4,15 +4,14 @@ import { Link } from 'react-router-dom';
 
 import * as ROUTES from '../../constants/routes';
  
-const Navigation = () => (
+const Navigation = (props) => {
 
+    return (
+
+    
     <Menu mode="horizontal" selectable={false} theme="dark">
-        <Menu.Item>
-        <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-        </Menu.Item>
-        <Menu.Item>
-        <Link to={ROUTES.LANDING}>Landing</Link>
-        </Menu.Item>
+        {props.loggedIn?
+        <>
         <Menu.Item>
         <Link to={ROUTES.HOME}>Home</Link>
         </Menu.Item>
@@ -22,13 +21,28 @@ const Navigation = () => (
         <Menu.Item>
         <Link to={ROUTES.ADMIN}>Admin</Link>
         </Menu.Item>
-    </Menu>
+        <Menu.Item>
+        <Link to={ROUTES.ADMIN}>Signout</Link>
+        </Menu.Item>
+        </>
+        : <>
+        
+        <Menu.Item>
+        <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+        </Menu.Item>
+        <Menu.Item>
+        <Link to={ROUTES.LANDING}>Landing</Link>
+        </Menu.Item>
+         </>
+
+        }
+    </Menu>)
 
       
         
         
   
 
-);
+    };
  
 export default Navigation;

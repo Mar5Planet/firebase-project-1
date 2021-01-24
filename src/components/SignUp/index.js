@@ -28,6 +28,7 @@ const Signup = (props) => {
     const onSubmit = event => {
         props.firebase.doCreateUserWithEmailAndPassword(email, passwordOne)
         .then(authUser => {
+            props.setLoggedIn(true);
             setUsername('')
             setPasswordOne('')
             setEmail('')
